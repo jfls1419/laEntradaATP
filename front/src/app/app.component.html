@@ -1,0 +1,120 @@
+<div class="toolbar" role="banner">
+  <img width="40" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+  <h3>Reporte de horas</h3>
+  <img width='160' src="assets/image/Teleperformance_Logo.png" alt="Teleperformance_Logo">
+</div>
+
+<div class="container">
+<h3>Ingrese los siguientes datos para generar el reporte de horas</h3>
+
+
+<!-- 
+<p>Nombre y apellido</p>
+<input type="text" [(ngModel)]="data2">
+<div *ngIf="data2 == 0">
+  Coloque datos por favor
+</div> -->
+
+
+<form #formUser='ngForm' (ngSubmit)='onSubmit(formUser)' validate>
+  <div class="row">
+    <div class="form-group col-3 p-4">
+      <label for="data1">Documento </label>
+      <input type="text" class="form-control" placeholder="Inserte documento" name='documento' ngModel required>
+      <small id="Mensaje" class="form-text text-muted" >Coloque su cedula o Nit</small>
+    </div>
+
+
+
+    <div class="form-group col-3 p-4">
+      <label for="nombre">Nombre y apellido</label>
+      <input name='nombre' ngModel required type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre y apellido">
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="fecha_inicio">Fecha inicio</label>
+      <input name='fechaI' ngModel required type="date" class="form-control">
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="fecha_fin">Fecha Fin</label>
+      <input name='fechaF' ngModel required type="date" class="form-control" >
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="hora_inicio_turno">Horario inicio de turno</label>
+      <input name='horaI' ngModel required type="time" class="form-control" >
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="hora_inicio_turno">Horario fin de turno</label>
+      <input name='horaF' ngModel required type="time" class="form-control">
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="hora_inicio_extra">Horario inicio hora extra</label>
+      <input name='horaIE' ngModel required type="time" class="form-control" >
+    </div>
+
+    <div class="form-group col-3 p-4">
+      <label for="hora_fin_extra">Horario fin Hora extra</label>
+      <input name='horaFE' ngModel required type="time" class="form-control" >
+    </div>
+    </div>
+    <button type="submit"  class="btn btn-primary">Añadir</button>
+
+</form>
+
+<!-- <table class="table table-borderless">
+  <thead >
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Documento</th>
+      <th scope="col">Nombre y apellido</th>  
+      <th scope="col">Fecha inicio</th>
+      <th scope="col">Fecha Fin</th>
+      <th scope="col">Horario inicio de turno</th>
+      <th scope="col">Horario inicio hora extra</th>
+      <th scope="col">Horario fin Hora extra</th>
+      <th scope="col">Motivo hora extra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td *ngFor="let Documento of dato1"></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let item of headers">{{item}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ele of datos">
+      <td *ngFor='let item of headers'>{{ele[item]}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Datos API</h2>
+<app-datosrequeridos></app-datosrequeridos>
+
+</div>
+
+<div class="footer">
+  <div class="footer_data">
+    <h3>Gracias por su apoyo</h3>
+    <img src="..//assets/image/peace.png" alt="icon" class="iconFooter">
+  <h6>Trabaje desde casa, Entre a teleperformace</h6>
+    <img src="..//assets/image/Teleperformance_Logo.png" alt="icon" class="iconFooter">
+      <h3>un sitio diseñado para usted</h3>
+      <img src="..//assets/image/holding-hands.png" alt="icon" class="iconFooter">
+  </div>
+</div>

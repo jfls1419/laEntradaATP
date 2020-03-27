@@ -1,0 +1,14 @@
+<div class="datos-api">
+<table class="table ">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let item of headers">{{item}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ele of datos">
+            <td *ngFor='let item of headers'>{{ele[item]}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
